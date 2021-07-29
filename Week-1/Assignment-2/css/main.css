@@ -1,0 +1,113 @@
+/* Global setings */
+* {
+  font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+header {
+  height: 10vh;
+  background-color: rgb(139, 185, 185);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+header div {
+  margin: 10px;
+}
+
+.nav-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-logo h3 {
+  font-size: 0.5em;
+  font-weight: 800;
+}
+
+.nav-btns {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.nav-btns a {
+  margin: 0 5px 0 5px;
+  text-decoration: none;
+  color: rgb(49, 49, 49);
+  font-weight: bold;
+  font-size: 0.5em;
+}
+
+#logo-pic {
+  width: 20px;
+  margin: 10px;
+}
+/* main =============*/
+
+/* Welcome */
+.welcome {
+  height: 20vh;
+  background-color: rgb(246, 248, 138);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Home content */
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-content > h2{ 
+  text-align: center;
+}
+
+.content-boxs {
+  width: 90%;
+
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.content-box {
+  width: 45%;
+  height: 20vh;
+  margin: 10px;
+  background-color: gainsboro;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RWD control */
+@media  screen and (min-width: 580px) {
+  .nav-btns a {
+    margin: 0 20px 0 20px;
+    font-size: 1em;
+  }
+
+  #logo-pic {
+    width: 30px;
+    margin: 10px;
+  }
+
+  .nav-logo h3 {
+  font-size: 1em;
+  }
+}
+@media screen and (min-width: 1200px){
+  /* main */
+  .home-content {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
