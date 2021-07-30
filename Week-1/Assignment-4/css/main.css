@@ -1,10 +1,24 @@
 /* Global */
+.for-big-screen {
+  display: none;
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 a {
   text-decoration: none;
+}
+
+a.grey-border {
+  border: solid 1px rgb(228, 228, 228);
 }
 
 .input-group img {
@@ -20,10 +34,16 @@ a {
   border-bottom: none;
 }
 
-a:link,
-a:visited {
-  color: rgb(31, 31, 31);
+.card .card-body {
+  display: flex;
+  flex-direction: column;
 }
+
+.card .card-body a {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
 
 /* ===Header=== */
 /* navbar */
@@ -44,7 +64,7 @@ a:visited {
   display: flex;
 }
 
-#navbar-logo {
+.navbar-logo {
   width: 200px;
   margin-left: 2rem;
 }
@@ -52,18 +72,37 @@ a:visited {
 .menu {
   display: flex;
   align-items: center;
+
+  margin-right: auto;
 }
 
-.btn-wrapper ul {
+.navbar-utilities {
+  display: flex;
+  align-items: center;
+}
+
+.btn-wrapper {
+  display: flex;
+}
+
+.btn-wrapper .dropdown {
+  margin: 0 20px;
+}
+
+.btn-wrapper > ul {
   margin: 0;
 
   display: flex;
   align-items: center;
 }
 
-.btn-wrapper li {
+.btn-wrapper >ul li {
   margin: 0 10px;
   list-style-type: none;
+}
+
+.btn-wrapper > ul li a {
+  color: rgb(99, 99, 99);
 }
 
 .language-btn{
@@ -86,7 +125,8 @@ main {
 
 /* banner */
 .banner {
-  height: 6rem;
+  height: 64px;
+  padding: 20px;
   background-color: rgb(36, 36, 36);
   color: white;
 
@@ -102,8 +142,9 @@ main {
 
 /* landing */
 .landing {
-  width: 80%;
-  margin: 1rem auto;
+  width: 95%;
+  max-width: 1400px;
+  margin: 5rem auto;
 
   display: flex;
 }
@@ -117,6 +158,15 @@ main {
   justify-content: center;
 }
 
+.description-part span {
+  margin-top: 16px;
+}
+
+.description-part a {
+  margin-top: 32px;
+  align-self: flex-start;
+}
+
 .landing-media {
   width: 50%;
 }
@@ -128,6 +178,8 @@ main {
 
 /* Product items */
 .product-items {
+  border-top: 2px solid rgb(228, 228, 228);
+
   display: grid;
   grid-template-columns: 15% 15% 15% 15%;
   grid-template-rows: 10rem 10rem 10rem 10rem;
@@ -138,7 +190,6 @@ main {
 .product-title {
   grid-column-start: 1;
   grid-column-end: 5;
-
   margin-top: 3rem;
 
   text-align: center;
@@ -176,23 +227,14 @@ main {
   margin: 3rem 2rem;
 }
 
-.interim-area .card .card-footer {
-  border-top: none;
-  background-color: rgba(255, 255, 255, 0);
-}
-
-.interim-area .card .card-footer a {
-  margin: 1rem;
-}
-
 /* news-cards */
 .news-cards {
-  background-color: rgb(216, 216, 216);
+  background-color: rgb(241, 243, 244);
   padding: 3rem 0;
 
   display: grid;
-  grid-template-columns: 20% 20% 20% 20%;
-  grid-gap: 2rem;
+  grid-template-columns: 22% 22% 22% 22%;
+  grid-gap: 1.5rem;
   justify-content: center;
 }
 
@@ -205,17 +247,7 @@ main {
 .news-cards .card .card-header img {
   display: block;
   height: 6rem;
-  margin: 0 auto;
-}
-
-.news-cards .card .card-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.news-cards .card .card-body a {
-  margin-top: auto;
-  width: 50%;
+  margin: 1rem auto;
 }
 
 /* Developers */
@@ -226,39 +258,71 @@ main {
 }
 
 .developer-area header {
+  width: 60%;
   margin: 3rem auto;
   text-align: center;
 }
 
-.developer-area .developer-cards {
+.developer-area header h5 {
+  margin-top: 16px;
+}
+
+.developer-area header a {
+  margin-top: 24px;
+}
+
+.developer-cards {
   width: 100%;
+  border-bottom: solid 1px rgb(218, 220, 224);;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-.developer-area .developer-cards .card {
+.developer-cards .card {
   width: 22%;
   min-width: 280px;
-  margin: 0 1rem;
+  margin: 3rem 1rem;
+  padding: 30px 30px 0 30px;
 }
 
-
-.developer-area .developer-cards .card .card-header img {
+.developer-cards .card .card-header img {
+  width: 100px;
   display: block;
   border-radius: 50%;
   margin: 0 auto;
 }
 
-.developer-area .developer-cards .card .card-body *{
-  margin-top: 2rem;
+.developer-name, 
+.developer-region, 
+.expertise, 
+.expertise-content{
+  text-align: center;
+}
 
-  display: flex;
-  justify-content: center;
+.developer-name{
+  font-size: 24px;
+}
+
+.developer-region {
+  margin: 16px 0;
+}
+
+.expertise-content {
+  margin-bottom: 36px;
+  color:rgb(143, 143, 143);
+}
+
+.developer-cards .card a {
+  align-self: center;
 }
 
 /* ===footer=== */
+footer {
+  margin-top: auto; /* make sure footer is sticky */
+}
+
 /* link box */
 .link-boxes {
   display: flex;
@@ -295,10 +359,18 @@ main {
   margin: 0 2rem 2rem 2rem;
 }
 
-.copyright {
-}
 
 .footer-utilities-btns {
   display: flex;
 }
 
+
+@media (min-width: 1400px) {
+  .for-big-screen {
+    display: initial;
+  }
+
+  .dropdown {
+    display: none;
+  }
+}
