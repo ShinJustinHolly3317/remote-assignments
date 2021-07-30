@@ -10,13 +10,13 @@ a {
   text-decoration: none;
 }
 
+
 /* Navbar */
 header {
-  height: 6vh;
   background-color: rgb(237, 237, 237);
 
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 header div {
@@ -26,26 +26,25 @@ header div {
 .nav-logo {
   display: flex;
   flex-direction: row;
+  justify-content: center;
   align-items: center;
 }
 
-.nav-logo h3 {
-  font-size: 0.5em;
+.nav-logo span {
+  font-size: 1em;
   color: rgb(244, 125, 32);
 }
 
 .nav-btns {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
 }
 
-.nav-btns a {
-  margin: 0 5px 0 5px;
-  text-decoration: none;
+.nav-btns li {
+  margin: 5px;
+  list-style-type: none;
   color: rgb(49, 49, 49);
-  font-weight: bold;
-  font-size: 0.5em;
 }
 
 #logo-pic {
@@ -53,7 +52,7 @@ header div {
   border-radius: 40%;
   margin: 10px;
 }
-/* main =============*/
+/* ===main=== */
 
 /* Welcome */
 .welcome {
@@ -102,7 +101,18 @@ header div {
 }
 
 /* RWD control */
-@media  screen and (min-width: 580px) {
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-btns {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
   .nav-btns a {
     margin: 0 20px 0 20px;
     font-size: 1em;
@@ -118,7 +128,7 @@ header div {
   }
 }
 
-@media screen and (min-width: 1200px){
+@media (min-width: 1200px){
   /* main */
   .home-content {
     width: 1200px;
