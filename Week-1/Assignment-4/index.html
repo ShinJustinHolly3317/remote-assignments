@@ -11,6 +11,24 @@
 </head>
 <body>
   <header class="cos-navbar">
+    <!-- menu buttons area floating with burger -->
+    <img src="img/navbar/burger.png" alt="" class="for-small-screen burger-button js-burger-button">
+    <div class="collapse-burger-bg floating-outof-window js-collapse-navbar">
+      <div class="collapse-burger-navbar">
+        <ul>
+          <li><a class="burger-close-btn js-burger-close-btn text-dark">X</a><img src="img/navbar/logo_google_icon.svg" alt="google logo" class="navbar-logo"></li>
+          <li>Products</li>
+          <li>Events</li>
+          <li>Learn</li>
+          <li>Developer Communities</li>
+          <li>Developer Profile</li>
+          <li>Blog</li>
+        </ul>
+      </div>
+      <div class="site-mask"></div>
+    </div>
+    
+
     <!-- logo area -->
     <div class="logo-area">
       <img src="img/navbar/logo_google_icon.svg" alt="google logo" class="navbar-logo">
@@ -45,7 +63,7 @@
 
     <div class="navbar-utilities">
       <!-- search bar for screen smaller than 768-->
-      <div class="search-wrapper">
+      <div class="search-wrapper for-small-screen">
         <form action="" class="input-group">
           <span class="input-group-text" id="basic-addon1"><img src="img/navbar/search.svg" alt="search" id="small-search-icon"></span>
         </form>
@@ -78,7 +96,7 @@
     <!-- welcome area -->
     <div class="landing">
       <div class="description-part">
-        <h1 class="first-title-item">learn to build anything with google</h1>
+        <h1 class="first-title-item">Learn to build anything with Google</h1>
         <span>Introducing Learn. Join the one-stop destination for self-guided coding exercises, quizzes, technical articles, and
         video tutorials. Gain the software skills you need to develop with Google’s technology.</span>
         <a class="btn btn-primary">Start learning</a>
@@ -91,7 +109,7 @@
 
     <!-- products list -->
     <div class="product-items">
-      <h1 class="product-title">Build <strong>anything</strong> with Google</h1>
+      <span class="product-title">Build <strong>anything</strong> with Google</span>
       <div class="item-wrapper">
         <img src="img/products/ads.svg" alt="Google Ads">
         <h4>Google Ads</h4>
@@ -452,5 +470,6 @@
   <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="js/home-listeners.js"></script>
 </body>
 </html>
