@@ -17,7 +17,7 @@
     </div>
 
     <!-- menu buttons area -->
-    <nav class="menu">
+    <nav class="menu for-medium-screen">
       <!-- normal tabs -->
       <div class="btn-wrapper">
         <ul>
@@ -29,23 +29,30 @@
           <li class="for-big-screen"><a href="">Blog</a></li>
         </ul>
         <div class="dropdown">
-          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"
-            aria-expanded="false">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+            data-bs-toggle="dropdown" aria-expanded="false">
             More options
           </a>
-        
+    
           <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li><a class="dropdown-item" href="#">Developer Communities</a></li>
             <li><a class="dropdown-item" href="#">Developer Profile</a></li>
             <li><a class="dropdown-item" href="#">Blog</a></li>
           </ul>
         </div>
-      </div>    
+      </div>
     </nav>
 
     <div class="navbar-utilities">
-      <!-- search bar -->
+      <!-- search bar for screen smaller than 768-->
       <div class="search-wrapper">
+        <form action="" class="input-group">
+          <span class="input-group-text" id="basic-addon1"><img src="img/navbar/search.svg" alt="search" id="small-search-icon"></span>
+        </form>
+      </div>
+
+      <!-- search bar for screen bigger than 768-->
+      <div class="search-wrapper for-medium-screen">
         <form action="" class="input-group">
           <span class="input-group-text" id="basic-addon1"><img src="img/navbar/search.svg" alt="search"></span>
           <input type="text" placeholder="Search" class="form-control">
@@ -71,7 +78,7 @@
     <!-- welcome area -->
     <div class="landing">
       <div class="description-part">
-        <h1>learn to build anything with google</h1>
+        <h1 class="first-title-item">learn to build anything with google</h1>
         <span>Introducing Learn. Join the one-stop destination for self-guided coding exercises, quizzes, technical articles, and
         video tutorials. Gain the software skills you need to develop with Google’s technology.</span>
         <a class="btn btn-primary">Start learning</a>
@@ -145,7 +152,7 @@
         <div class="card">
           <img src="img/interim/events.png" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Events</h5>
+            <h5 class="card-title first-title-item">Events</h5>
             <p class="card-text">Bringing developers together in-person and online. Stay in the know about upcoming events, catch up on content you
             missed, and connect with Google experts.
             </p>
@@ -156,7 +163,7 @@
         <div class="card">
           <img src="img/interim/community.png" class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">Community</h5>
+            <h5 class="card-title first-title-item">Community</h5>
             <p class="card-text">Connect with fellow developers and startups in your area, hear from industry experts, share your skills, and learn new
             ones.
             </p>
@@ -176,7 +183,7 @@
         </div>
       
         <div class="card-body">
-          <h3>Get started with Google On-Device ML</h3>
+          <h3 class="first-title-item">Get started with Google On-Device ML</h3>
           <p>We've launched a new site dedicated to on-device machine learning. It explains why you should care about running
           on-device ML, gives a clear overview of Google's solutions and tools, and helps you to quickly get started in your own
           apps.</p>
@@ -190,7 +197,7 @@
         </div>
       
         <div class="card-body">
-          <h3>Certification vouchers for Black+ developers</h3>
+          <h3 class="first-title-item">Certification vouchers for Black+ developers</h3>
           <p>If you self-identify as a Black+ developer in the US, you can now request free or discounted vouchers to take
           certification exams for Android, TensorFlow, and/or Cloud. This is your opportunity to show off your skills and increase
           your credibility.</p>
@@ -204,7 +211,7 @@
         </div>
       
         <div class="card-body">
-          <h3>What's new in multi-platform Flutter</h3>
+          <h3 class="first-title-item">What's new in multi-platform Flutter</h3>
           <p>Flutter's 2 and 2.2 releases are major milestones in the maturity and growth of Flutter with multi-platform development
           support for mobile, web, desktop, and embedded devices from a single code base..</p>
           <a class="btn border-0 text-primary">Learn more</a>
@@ -217,7 +224,7 @@
         </div>
       
         <div class="card-body">
-          <h3>Apply for Exchange with Google Developers</h3>
+          <h3 class="first-title-item">Apply for Exchange with Google Developers</h3>
           <p>Looking to share, receive, or facilitate a tech mentorship? Join a free program that connects developers to leverage the
           technical and professional knowledge within the Google Developers community.</p>
           <a class="btn border-0 text-primary">Apply now</a>
@@ -230,7 +237,7 @@
         </div>
       
         <div class="card-body">
-          <h3>15% Google Play service fee tier</h3>
+          <h3 class="first-title-item">15% Google Play service fee tier</h3>
           <p>Starting July 1, 2021, the service fee is 15% instead of 30% for the first $1M (USD) in earnings. To enroll, create an
           Account Group in Google Play Console.</p>
           <a class="btn border-0 text-primary">Learn more</a>
@@ -243,7 +250,7 @@
         </div>
       
         <div class="card-body">
-          <h3>What's new in Machine Learning</h3>
+          <h3 class="first-title-item">What's new in Machine Learning</h3>
           <p>Learn about the latest and greatest in machine learning (ML) from Google! We cover what’s available to developers when
           it comes to creating, understanding, and deploying models for a variety of different applications. From Responsible AI
           to TensorFlow 2.5, mobile devices, microcontrollers, and beyond.</p>
@@ -257,7 +264,7 @@
         </div>
       
         <div class="card-body">
-          <h3>Next Generation Maps for the Web</h3>
+          <h3 class="first-title-item">Next Generation Maps for the Web</h3>
           <p>Released in beta at Google I/O, now you can control the map in three dimensions and bring oblique 3D building models to
           your web apps with Tilt and Rotation. Render two- and three-dimensional WebGL objects directly on the vector map with
           depth, occlusion, and perspective.</p>
@@ -271,7 +278,7 @@
         </div>
       
         <div class="card-body">
-          <h3>Boost Developer Productivity with Go 1.16</h3>
+          <h3 class="first-title-item">Boost Developer Productivity with Go 1.16</h3>
           <p>The latest release of the Go programming language brings improvements to the linker for reduced memory consumption and
           binary sizes, a new embedded file system to speed up development, support for arm64 on macOS, and more.</p>
           <a class="btn border-0 text-primary">Learn more</a>
@@ -355,7 +362,7 @@
     <div class="link-boxes">
       <div class="link-box">
         <ul>
-          <li>connect</li>
+          <li>Connect</li>
           <li>Blog</li>
           <li>Facebook</li>
           <li>Medium</li>
@@ -396,8 +403,8 @@
         <img src="img/navbar/logo_google_icon.svg" alt="google logo" class="navbar-logo">
       </div>
       
-      <!-- menu buttons area -->
-      <nav class="menu">
+      <!-- menu buttons area for screen bigger than 375px-->
+      <nav class="menu for-medium-screen">
         <!-- normal tabs -->
         <div class="btn-wrapper">
           <ul>
@@ -407,6 +414,20 @@
             <li>Developer Communities</li>
             <li>Developer Profile</li>
             <li>Blog</li>
+          </ul>
+        </div>
+      </nav>
+
+      <!-- menu buttons area for screen smaller than 375px-->
+      <nav class="menu for-small-screen">
+        <!-- normal tabs -->
+        <div class="btn-wrapper">
+          <ul>
+            <li>Android</li>
+            <li>Chrome</li>
+            <li>Firebase</li>
+            <li>Google Cloud Platform</li>
+            <li>All products</li>
           </ul>
         </div>
       </nav>
@@ -421,7 +442,7 @@
       </div>
 
       <div class="footer-utilities-btns">
-        <span>Sign up for the Google Developers newsletter</sp>an
+        <span>Sign up for the Google Developers newsletter</span>
         <a class="btn btn-primary">Subscribe</a>
         <a class="btn btn-outline-secondary language-btn">language</a>
       </div>
