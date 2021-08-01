@@ -13,21 +13,18 @@
   <header class="cos-navbar">
     <!-- menu buttons area floating with burger -->
     <img src="img/navbar/burger.png" alt="" class="for-small-screen burger-button js-burger-button">
-    <div class="collapse-burger-bg floating-outof-window js-collapse-navbar">
-      <div class="collapse-burger-navbar">
-        <ul>
-          <li><a class="burger-close-btn js-burger-close-btn text-dark">X</a><img src="img/navbar/logo_google_icon.svg" alt="google logo" class="navbar-logo"></li>
-          <li>Products</li>
-          <li>Events</li>
-          <li>Learn</li>
-          <li>Developer Communities</li>
-          <li>Developer Profile</li>
-          <li>Blog</li>
-        </ul>
-      </div>
-      <div class="site-mask"></div>
+    <div class="collapse-burger-navbar floating-outof-window js-collapse-navbar">
+      <ul>
+        <li><a class="burger-close-btn js-burger-close-btn text-dark">X</a><img src="img/navbar/logo_google_icon.svg" alt="google logo" class="navbar-logo"></li>
+        <li>Products</li>
+        <li>Events</li>
+        <li>Learn</li>
+        <li>Developer Communities</li>
+        <li>Developer Profile</li>
+        <li>Blog</li>
+      </ul>
     </div>
-    
+    <div class="site-mask not-visible"></div>
 
     <!-- logo area -->
     <div class="logo-area">
@@ -63,11 +60,8 @@
 
     <div class="navbar-utilities">
       <!-- search bar for screen smaller than 768-->
-      <div class="search-wrapper for-small-screen">
-        <form action="" class="input-group">
-          <span class="input-group-text" id="basic-addon1"><img src="img/navbar/search.svg" alt="search" id="small-search-icon"></span>
-        </form>
-      </div>
+      <img src="img/navbar/search.svg" alt="search" id="small-search-icon">
+        
 
       <!-- search bar for screen bigger than 768-->
       <div class="search-wrapper for-medium-screen">

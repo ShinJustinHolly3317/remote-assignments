@@ -10,9 +10,11 @@ burgerBtn.addEventListener('click', () => {
   console.log('hahahaha');
   collapsingNavbar.classList.toggle('floating-inside-window')
   siteMask.classList.toggle('js-mask-fadein')
+  siteMask.classList.toggle('not-visible')
 })
 
 collapseClosingBtn.addEventListener('click', () => {
   collapsingNavbar.classList.toggle('floating-inside-window')
   siteMask.classList.toggle('js-mask-fadein')
+  siteMask.classList.toggle('not-visible')
 })
