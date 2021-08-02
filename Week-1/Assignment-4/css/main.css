@@ -19,7 +19,6 @@
 }
 
 .floating-inside-window {
-  
   transition: left .2s;
   left: 0;
 }
@@ -120,13 +119,13 @@ a.btn.primary-hover:hover {
 
 .dynamic-search-wrapper input {
   width: 70vw;
+  max-height: 100%;
 }
 
 .dynamic-close-btn {
   line-height: 30px;
   padding: 0 10px;
   cursor: pointer;
-  
 }
 
 
@@ -456,8 +455,6 @@ main {
 
 /* Developers */
 .developer-area {
-  
-
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -469,6 +466,11 @@ main {
   margin-top: 2rem;
 
   text-align: center;
+}
+
+.developer-area header .button-area {
+  display: flex;
+  justify-content: center;
 }
 
 .developer-area header h5 {
@@ -797,4 +799,3 @@ footer {
     display: none;
   }
 }
-
