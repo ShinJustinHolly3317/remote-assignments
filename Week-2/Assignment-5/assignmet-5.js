@@ -11,15 +11,16 @@ function binarySearchPosition(numbers, target) {
   let lastIndex = numbers.length - 1
 
   while (lastIndex >= beginIndex) {
-    const midIndex = Math.floor((beginIndex + lastIndex )/ 2)
+    const midIndex = Math.floor((beginIndex + lastIndex ) / 2)
     const midNum = numbers[midIndex]
     if (midNum === target) {
       // base case
       return midIndex
     } else if (midNum > target) {
-      // slice the array to the left part
+      // slice the left half of the array
       lastIndex = midIndex - 1
     } else {
+      // Slice the right half of the array
       beginIndex = midIndex + 1
     }
   }
