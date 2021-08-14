@@ -10,17 +10,18 @@ function twoSum (nums, target) {
   for (let i = 1; i < nums.length; i++) {
     let subNum = target - nums[i]
     if (subNum in searchObj) {
-      return [i, searchObj[subNum]]
-    } else [
+      return [searchObj[subNum], i]
+    } else {
       searchObj[nums[i]] = i
-    ]
+    }
   }
+  return 'Cannot find any match!'
 }
 
 
 // Main
-const arr = [2,7,11,15]
+const arr = [3,3]
 const target = 9
 
-console.log(twoSum(arr, 9));
+console.log(twoSum(arr, target));
 
