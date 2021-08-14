@@ -12,18 +12,17 @@ function gaussSum (num) {
 
 // Route
 app.get('/', (req, res) => {
-  res.send('Hello, this is assignment-1 server set up practice!')
+  res.redirect('/data')
 })
 
 app.get('/data', (req, res) => {
-  const queryData = req.query
-  const outputNum = isNaN(queryData.number) ? 'Wrong Parameter' : gaussSum(+queryData.number)
-  if (Object.keys(queryData).length === 0) {
+  const { number } = req.query
+  const outputNum = isNaN(number) ? 'Wrong Parameter' : gaussSum(+number)
+  if (Object.keys(req.query).length === 0) {
     res.send('Lack of Parameter')
   } else {
     res.send(`Sum of 1+2+..+N is: ${outputNum}`)
   }
-  
 })
 
 

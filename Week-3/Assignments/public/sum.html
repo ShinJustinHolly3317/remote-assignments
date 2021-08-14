@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculate sum</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+<body>
+  <section class="main">
+    <div class="form group">
+      <i>Calculate the sum of 1+2+3+...+N</i>
+      <div>
+        <input type="text" name="number" id="numberInput">
+        <button class="btn" onclick="sendAjax()">Sum up</button>
+      </div>
+    </div>
+    <div class="answer"></div>
+  </section>
+  <script>
+    let xhr = new XMLHttpRequest()
+    const input = document.querySelector('#numberInput')
+    const formGroup = document.querySelector('.group')
+    const answer = document.querySelector('.answer')
+
+    // Listener
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4) {
+        if (xhr.status === 200) {
+          const response = JSON.parse(xhr.responseText)
+          console.log(response);
+          answer.innerHTML = `<p>The total sum of 1+...+ ${response.number} = ${response.answer}</p>
+            <a href="/sum.html" class="btn">Do it again</a>
+          `
+        } else {
+          console.log(xhr.statusText);
+        }
+      } 
+    }
+
+    // Functions
+    function sendAjax () {
+      const number = input.value 
+      if (!number) {
+        alert('Please enter positive integer')
+      } else {
+        xhr.open('GET', `http://localhost:3000/data?number=${number}`)
+        xhr.send()
+        formGroup.style.display = 'none'
+        console.log('sent')
+      }
+    }
+  </script>
+</body>
+</html>
