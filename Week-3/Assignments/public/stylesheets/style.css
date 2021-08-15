@@ -1,3 +1,14 @@
+body {
+  margin: 0;
+}
+
+.navbar {
+  text-align: center;
+  background-color: rgb(244, 125, 32);
+  height: 50px;
+  margin: 0;
+}
+
 .main {
   height: 100vh;
   display: flex;
@@ -34,4 +45,9 @@ a {
 #alert {
   font-size: 0.8rem;
   color: brown;
+}
+
+#errmsg {
+  font-size: 0.8rem;
+  color: grey;
 }

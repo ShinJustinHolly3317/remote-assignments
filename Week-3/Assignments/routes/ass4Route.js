@@ -1,35 +1,14 @@
-// Environment variables
-const port = 3000
-
-// Require express module
 const express = require('express')
-const app = express()
-
-// Require cookie-parser
-const cookieParser = require('cookie-parser')
-app.use(cookieParser())
-
-
-// Middelware
-// Static files
-app.use(express.static('public'))
-
-// template engine
-app.set('view engine', 'pug')
-
-// body-parser
-app.use(express.urlencoded({ extended: false }))
-
-
+const router = express.Router()
 
 
 // Routes
-app.get('/', (req, res) => {
+router.get('/', (req, res) => {
   // for user's convenience
   res.redirect('/myName')
 })
 
-app.get('/myName', (req, res) => {
+router.get('/myName', (req, res) => {
   const { myName } = req.cookies
   if (!myName) {
     return res.redirect('/trackName')
@@ -37,7 +16,7 @@ app.get('/myName', (req, res) => {
   res.render('myName', { myName })
 })
 
-app.get('/trackName', (req, res) => {
+router.get('/trackName', (req, res) => {
   const { myName } = req.cookies
   const { name } = req.query
   if (!myName && !name) {
@@ -51,13 +30,10 @@ app.get('/trackName', (req, res) => {
   return res.redirect('/myName')
 })
 
-app.get('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   res.clearCookie('myName')
   res.redirect('/trackName')
 })
 
 
-// Start server
-app.listen(port, () => {
-  console.log(`This server is running on http://localhost:${port}`)
-})
+module.exports = router
