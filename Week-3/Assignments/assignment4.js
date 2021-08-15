@@ -1,8 +1,14 @@
+// Environment variables
 const port = 3000
+
+// Require express module
 const express = require('express')
-const cookieParser = require('cookie-parser')
-const { render } = require('pug')
 const app = express()
+
+// Require cookie-parser
+const cookieParser = require('cookie-parser')
+app.use(cookieParser())
+
 
 // Middelware
 // Static files
@@ -14,8 +20,7 @@ app.set('view engine', 'pug')
 // body-parser
 app.use(express.urlencoded({ extended: false }))
 
-// cookie-parser
-app.use(cookieParser())
+
 
 
 // Routes
@@ -35,8 +40,8 @@ app.get('/myName', (req, res) => {
 app.get('/trackName', (req, res) => {
   const { myName } = req.cookies
   const { name } = req.query
-  // Below condition for user manually typing in url, instead of using buttons
   if (!myName && !name) {
+    // Submit an empty input
     return res.render('trackName')
   } else if (name) {
     // with name querystring, without cookie
@@ -54,5 +59,5 @@ app.get('/logout', (req, res) => {
 
 // Start server
 app.listen(port, () => {
-  console.log(`Local server starts on http://localhost:${port}`)
+  console.log(`This server is running on http://localhost:${port}`)
 })

@@ -5,10 +5,12 @@ const port = 3000
 const express = require('express')
 const app = express()
 
+
 // Functions
 function gaussSum (num) {
   return num * (num + 1) / 2
 }
+
 
 // Route
 app.get('/', (req, res) => {

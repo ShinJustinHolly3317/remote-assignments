@@ -1,15 +1,21 @@
+// Environment variables
 const port = 3000
+
+// Require express module
 const express = require('express')
 const app = express()
+
 
 // Middelware
 // Static files
 app.use(express.static('public'))
 
+
 // Functions
 function gaussSum (num) {
   return num * (num + 1) / 2
 }
+
 
 // Routes
 app.get('/', (req, res) => {
@@ -19,9 +25,9 @@ app.get('/', (req, res) => {
 
 app.get('/data', (req, res) => {
   const { number } = req.query
-  const number = req.query.number
-  const answer = isNaN(number) ? 'Wrong Parameter' : gaussSum(+number)
+  const answer = isNaN(number) ? 'Wrong Parameter' : gaussSum(+number) // If qerystring is not number, return error msg.
   if (Object.keys(req.query).length === 0) {
+    // If no input, refresh.
     res.redirect('/sum.html')
   } else {
     res.locals.number = number
@@ -33,5 +39,5 @@ app.get('/data', (req, res) => {
 
 // Start server
 app.listen(port, () => {
-  console.log(`Local server starts on http://localhost:${port}`)
+  console.log(`This server is running on http://localhost:${port}`)
 })
