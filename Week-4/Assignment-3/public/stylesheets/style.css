@@ -1,0 +1,35 @@
+.main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.email, .password, .name {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.sign-in-form, .sign-up-form{
+  width: 30%;
+  height: 50vh;
+  margin: 20px;
+}
+
+.sign-in-form div, .sign-up-form div {
+  margin-bottom: 20px;
+}
+
+
+.sign-in-fail-msg, .sign-up-fail-msg {
+  color: red;
+}
+
+.format-alert {
+  font-size: 0.5rem;
+  position: absolute;
+  bottom: -25px;
+  display: none;
+  color: red;
+}
