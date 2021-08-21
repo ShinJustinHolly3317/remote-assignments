@@ -26,7 +26,7 @@
   color: red;
 }
 
-.format-alert {
+.format-alert-signin, .format-alert-signup {
   font-size: 0.5rem;
   position: absolute;
   bottom: -25px;

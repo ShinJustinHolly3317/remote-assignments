@@ -7,6 +7,7 @@ function ajax (src, callback) {
   fetch(src)
     .then(async (data) => {
       const newdata = await data.json()
+      // Target data is an array
       console.log(newdata)
       callback(newdata)
     })
@@ -16,6 +17,7 @@ function ajax (src, callback) {
 }
 
 function render (data) {
+  // Target data is an array
   if (Array.isArray(data)) {
     data.forEach( ele => {
       const textEle = document.createElement('div')

@@ -10,7 +10,7 @@ function delayedResultPromise(n1, n2, delayTime) {
 
 async function main() {
   const sum = await delayedResultPromise(4, 5, 3000)
-  console.log(sum);
+  console.log(`Sum is ${sum}`);
 }
 
 main() // result will be shown in the console after <delayTime> seconds
