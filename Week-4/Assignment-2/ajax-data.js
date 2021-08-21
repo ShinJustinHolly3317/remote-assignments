@@ -12,6 +12,7 @@ function ajax (src, callback) {
       callback(newdata)
     })
     .catch(err => {
+      // Handle network error
       callback(err)
     }) 
 }
@@ -27,7 +28,7 @@ function render (data) {
       mainEle.appendChild(textEle)
    })
   } else if (Object.prototype.toString.call(data) === '[object Error]') {
-    // handle error data
+    // handle fetch error data
     const textEle = document.createElement('h3')
     textEle.innerText = data.message
     mainEle.appendChild(textEle)
