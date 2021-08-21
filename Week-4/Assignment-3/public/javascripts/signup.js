@@ -11,16 +11,13 @@ signUpBtn.addEventListener('click', () => {
   const email = document.querySelector('.js-sign-up-email-input').value.toLowerCase()
   const password = document.querySelector('.js-sign-up-password-input').value
 
+  const userInfo = {name, email, password}
   // Check if the form is empty
-  if (name.length === 0 || email.length === 0 || password.length === 0) {
-    let nameMsg = name.length ? '' : ' name' 
-    let emailMsg = email.length ? '' : ` email`
-    let passwordMsg = password.length ? '' : ` password`
-    alert(`Don't leave${nameMsg}${emailMsg}${passwordMsg} blank.`)
+  if (isEmptyForm(userInfo)) {
+    alert(isEmptyForm(userInfo))
     return
   }
 
-  const userInfo = {name, email, password}
   fetch('http://localhost:3000/signup', {
     method: 'POST',
     headers: {
@@ -45,8 +42,9 @@ signUpBtn.addEventListener('click', () => {
 
 // Show error msg
 signUpForm.addEventListener('blur', (e) => {
+  signupFailMsg.innerText = '' // Clear error msg from server
   const email = document.querySelector('.js-sign-up-email-input').value.toLowerCase()
-  signupFailMsg.innerText = ''
+  
   if (e.target.classList.contains('js-sign-up-email-input')) {
     if (!isValidEmail(email)) {
       signupFormatAlert.style.display = 'initial'

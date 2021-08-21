@@ -11,14 +11,14 @@ signInBtn.addEventListener('click', () => {
   const email = document.querySelector('.js-sign-in-email-input').value.toLowerCase()
   const password = document.querySelector('.js-sign-in-password-input').value
 
+  const userInfo = {email, password}
+  console.log(userInfo);
   // Check if the form is empty
-  if (email.length === 0 || password.length === 0) {
-    let emailMsg = email.length ? '' : ` email`
-    let passwordMsg = password.length ? '' : ` password`
-    alert(`Don't leave${emailMsg}${passwordMsg} blank.`)
+  if (isEmptyForm(userInfo)) {
+    alert(isEmptyForm(userInfo))
     return
   }
-  const userInfo = {email, password}
+
   fetch('http://localhost:3000/signin', {
     method: 'POST',
     headers: {
@@ -43,8 +43,9 @@ signInBtn.addEventListener('click', () => {
 
 // Show error msg 
 signInForm.addEventListener('blur', (e) => {
+  signinFailMsg.innerText = '' // Clear error msg from server
   const email = document.querySelector('.js-sign-in-email-input').value.toLowerCase()
-  signinFailMsg.innerText = ''
+  
   if (e.target.classList.contains('js-sign-in-email-input')) {
     if (!isValidEmail(email)) {
       signinFormatAlert.style.display = 'initial'
